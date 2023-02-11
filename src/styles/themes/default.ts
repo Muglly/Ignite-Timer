@@ -1,4 +1,8 @@
 export const defaultThemes = {
+  'yellow-500': '#fba94c',
+  'green-500': '#00875f',
+  'red-500': '#ab222e',
+
   colors: {
     white: '#fff',
 
