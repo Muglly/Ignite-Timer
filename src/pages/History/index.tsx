@@ -10,8 +10,6 @@ export function History() {
     <S.HistoryContainer>
       <h1>Meu Histórico</h1>
 
-      <pre>{JSON.stringify(cycles, null, 2)}</pre>
-
       <S.HistoryList>
         <table>
           <thead>
@@ -23,38 +21,28 @@ export function History() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>há uma semana</td>
-              <td>
-                <S.Status statusColor="yellow">Em andamento</S.Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>há uma semana</td>
-              <td>
-                <S.Status statusColor="red">Enterronpido</S.Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>há uma semana</td>
-              <td>
-                <S.Status statusColor="green">Concluido</S.Status>
-              </td>
-            </tr>
-            <tr>
-              <td>Tarefa</td>
-              <td>20 minutos</td>
-              <td>há uma semana</td>
-              <td>
-                <S.Status statusColor="green">Concluido</S.Status>
-              </td>
-            </tr>
+            {cycles.map((cycle) => {
+              return (
+                <tr key={`Cycle - ${cycle.id}`}>
+                  <td>{cycle.task}</td>
+                  <td>{cycle.minuteAmount} minutos</td>
+                  <td>{cycle.startDate.toISOString()}</td>
+                  <td>
+                    {cycle.finishedDate && (
+                      <S.Status statusColor="green">Concluido</S.Status>
+                    )}
+
+                    {cycle.interruptedDate && (
+                      <S.Status statusColor="red">Interrompido</S.Status>
+                    )}
+
+                    {!cycle.finishedDate && !cycle.interruptedDate && (
+                      <S.Status statusColor="yellow">Em andamento</S.Status>
+                    )}
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </S.HistoryList>
