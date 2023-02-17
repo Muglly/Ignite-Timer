@@ -5,6 +5,18 @@ export const GlobalStyle = createGlobalStyle`
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+
+      ::-webkit-scrollbar {
+      width: 8px;
+      height: 5px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.gray[600]};
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track{
+      background: ${({ theme }) => theme.colors.gray[800]};
+    }
     }
 
     :focus {
@@ -16,7 +28,6 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${({ theme }) => theme.colors.gray[900]};
       color: ${({ theme }) => theme.colors.gray[300]};
       -webkit-font-smoothing: antialiased;
-
     }
 
     body, input, textarea, button {
@@ -24,4 +35,6 @@ export const GlobalStyle = createGlobalStyle`
       font-weight: 400;
       font-size: 1rem;
     }
+
+
 `
