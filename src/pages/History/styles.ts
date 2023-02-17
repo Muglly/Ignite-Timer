@@ -5,6 +5,7 @@ export const HistoryContainer = styled.main`
   flex-direction: column;
   flex: 1;
   padding: 3.5rem;
+  height: 100%;
 
   h1 {
     font-size: 1.5rem;
@@ -16,6 +17,7 @@ export const HistoryList = styled.div`
   flex: 1;
   overflow: auto;
   margin-top: 2rem;
+  width: 100%;
 
   table {
     width: 100%;
@@ -55,6 +57,10 @@ export const HistoryList = styled.div`
       &:last-child {
         padding-right: 1.5rem;
       }
+    }
+
+    tbody > tr {
+      overflow-y: scroll;
     }
   }
 `
