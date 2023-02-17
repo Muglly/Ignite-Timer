@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 
 import { Timer, Scroll } from 'phosphor-react'
-import LogoIgnite from '../../assets/ignite-logo.svg'
+import LogoIgnite from 'assets/ignite-logo.svg'
 
 import * as S from './styles'
 
