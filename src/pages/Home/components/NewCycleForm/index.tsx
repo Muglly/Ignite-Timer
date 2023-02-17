@@ -24,8 +24,6 @@ export function NewCycleForm() {
         <option value="projeto 1" />
         <option value="projeto 2" />
         <option value="projeto 3" />
-        <option value="projeto 4" />
-        <option value="projeto 5" />
       </datalist>
 
       <label htmlFor="minutesAmount">durante</label>
@@ -33,7 +31,6 @@ export function NewCycleForm() {
         id="minutesAmount"
         type="number"
         placeholder="00"
-        step={5}
         min={5}
         max={60}
         {...register('minuteAmount', { valueAsNumber: true })}
